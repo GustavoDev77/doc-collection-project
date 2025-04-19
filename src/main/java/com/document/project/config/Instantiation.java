@@ -1,5 +1,6 @@
 package com.document.project.config;
 
+import com.document.project.DTO.AutorDTO;
 import com.document.project.domain.Post;
 import com.document.project.domain.User;
 import com.document.project.repository.PostRepository;
@@ -35,10 +36,11 @@ public class Instantiation implements CommandLineRunner {
         User alex = new User(null, "Alex Brown", "brown@gmail.com");
         User gustavo = new User(null, "Gustavo Fring", "fring@gmail.com");
 
-        Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu Itaquer", "Ver o Coringão ganhar", gustavo);
-        Post post2 = new Post(null, sdf.parse("04/07/2012"), "Dia de São Nunca", "Vencemos a liberta, vai Corinthians", gustavo);
-
         userRepository.saveAll(Arrays.asList(maria, alex, gustavo));
+
+        Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu Itaquer", "Ver o Coringão ganhar", new AutorDTO(gustavo));
+        Post post2 = new Post(null, sdf.parse("04/07/2012"), "Dia de São Nunca", "Vencemos a liberta, vai Corinthians", new AutorDTO(alex));
+
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
 }

@@ -1,5 +1,6 @@
 package com.document.project.domain;
 
+import com.document.project.DTO.AutorDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,9 +16,9 @@ public class Post implements Serializable {
     private Date data;
     private String titulo;
     private String corpo;
-    private User autor;
+    private AutorDTO autor;
 
-    public Post(String id, Date data, String titulo, String corpo, User autor) {
+    public Post(String id, Date data, String titulo, String corpo, AutorDTO autor) {
         this.id = id;
         this.data = data;
         this.titulo = titulo;
@@ -57,11 +58,11 @@ public class Post implements Serializable {
         this.corpo = corpo;
     }
 
-    public User getAutor() {
+    public AutorDTO getAutor() {
         return autor;
     }
 
-    public void setAutor(User autor) {
+    public void setAutor(AutorDTO autor) {
         this.autor = autor;
     }
 
