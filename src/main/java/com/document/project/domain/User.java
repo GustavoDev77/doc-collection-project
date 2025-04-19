@@ -20,7 +20,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public void setId() {
+    public void setId(String id) {
         this.id = id;
     }
 

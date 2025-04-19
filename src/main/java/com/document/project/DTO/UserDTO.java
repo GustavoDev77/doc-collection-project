@@ -19,7 +19,7 @@ public class UserDTO implements Serializable {
         email = obj.getEmail();
     }
     
-    public void setId() {
+    public void setId(String id) {
         this.id = id;
     }
 
