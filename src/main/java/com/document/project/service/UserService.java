@@ -1,5 +1,6 @@
 package com.document.project.service;
 
+import com.document.project.DTO.UserDTO;
 import com.document.project.domain.User;
 import com.document.project.repository.UserRepository;
 import com.document.project.service.exception.ObjectNotFoundException;
@@ -25,5 +26,13 @@ public class UserService {
             throw new ObjectNotFoundException("Objeto não encontrado");
         }
         return userOptional.get();
+    }
+
+    public User insert(User obj){
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDto){
+        return new User(objDto.getId(), objDto.getNome(), objDto.getEmail());
     }
 }
